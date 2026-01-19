@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Flowix Finance</title>
+  <link rel="stylesheet" href="style.css?v=9" />
+  <link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#7c5cff">
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <div class="brand">
+        <div class="logo">💰</div>
+        <div>
+          <h1>Flowix Finance</h1>
+          <p class="sub">Витрати • доходи • баланс</p>
+        </div>
+      </div>
+      <div class="pill" id="today"></div>
+    </header>
+
+    <section class="cards">
+      <div class="card">
+        <div class="label">Баланс</div>
+        <div id="balance" class="value">0 ₴</div>
+      </div>
+      <div class="card">
+        <div class="label">Доходи</div>
+        <div id="income" class="value ok">0 ₴</div>
+      </div>
+      <div class="card">
+        <div class="label">Витрати</div>
+        <div id="expense" class="value bad">0 ₴</div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="row top">
+        <h2>Додати операцію</h2>
+        <span class="hint">Зберігається на цьому пристрої</span>
+      </div>
+
+      <div class="grid">
+        <label>Тип
+          <select id="type">
+            <option value="income">Доходи</option>
+            <option value="expense">Витрати</option>
+          </select>
+        </label>
+
+        <label>Категорія
+          <select id="category">
+            <option>Їжа</option>
+            <option>Транспорт</option>
+            <option>Покупки</option>
+            <option>Розваги</option>
+            <option>Комуналка</option>
+            <option>Здоровʼя</option>
+            <option>Зарплата</option>
+            <option>Інше</option>
+          </select>
+        </label>
+
+        <label>Сума (₴)
+          <input id="amount" type="number" inputmode="numeric" placeholder="Напр. 150" />
+        </label>
+
+        <label>Коментар
+          <input id="note" type="text" placeholder="Напр. піца" />
+        </label>
+      </div>
+
+      <button id="addBtn" class="btn">Додати</button>
+    </section>
+
+    <section class="panel">
+      <div class="row">
+        <h2>Історія</h2>
+        <button id="clearBtn" class="btn ghost">Очистити</button>
+      </div>
+
+      <div class="row">
+        <input id="search" class="search" placeholder="Пошук (категорія/коментар)..." />
+        <select id="filter" class="search">
+          <option value="all">Всі</option>
+          <option value="income">Тільки доходи</option>
+          <option value="expense">Тільки витрати</option>
+        </select>
+      </div>
+
+      <div id="list" class="list"></div>
+    </section>
+  </div>
+
+  <script src="app.js?v=9"></script>
+</body>
+</html>
